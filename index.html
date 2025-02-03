@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizador de Leituras</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="imgs/livro.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dashboard de Leituras</h1>
+
+      <div class="search-section">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Digite o nome do livro..."
+          oninput="getSuggestions()"
+          autocomplete="off"
+        />
+        <button onclick="searchBook()">🔍 Buscar</button>
+        <ul id="suggestions"></ul>
+      </div>
+
+      <div class="book-details">
+        <img id="bookImage" src="" alt="Imagem do Livro" />
+        <div class="book-info">
+          <h2 id="bookTitle">Título do Livro</h2>
+          <p id="bookSynopsis">Sinopse aparecerá aqui...</p>
+        </div>
+      </div>
+
+      <textarea
+        id="comments"
+        placeholder="Adicione comentários e anotações..."
+      ></textarea>
+      <textarea
+        id="characters"
+        placeholder="Descrição dos personagens..."
+      ></textarea>
+
+      <button onclick="saveBook()">Salvar Livro</button>
+
+      <h2>📚 Livros Salvos</h2>
+      <div id="savedBooks"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
