@@ -7,16 +7,68 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  max-width: 100vw;
   margin: auto;
   text-align: center;
 }
 
-.search-section {
+.search-box {
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  width: 100%;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #333;
+  color: white;
+  border: none;
+}
+
+.search-box input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffffa1;
+  pointer-events: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search-icon i {
+  transform: translateX(50%);
+  cursor: pointer;
+}
+
+.search-box span {
+  padding: 8px 24px 8px 2px;
+  right: -1px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+
+.search-box span::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  margin-right: 5px !important;
+  background-color: #fff;
 }
 
 input,

@@ -4,30 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Organizador de Leituras</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="imgs/livro.png" type="image/x-icon" />
   </head>
   <body>
     <div class="container">
-      <h1>Dashboard de Leituras</h1>
-
       <div class="search-section">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Digite o nome do livro..."
-          oninput="getSuggestions()"
-          autocomplete="off"
-        />
-        <button onclick="searchBook()">🔍 Buscar</button>
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Digite o nome do livro..."
+            oninput="getSuggestions()"
+            autocomplete="off"
+          />
+          <span class="search-icon"><i class="fas fa-search"></i></span>
+        </div>
         <ul id="suggestions"></ul>
       </div>
 
       <div class="book-details">
-        <img id="bookImage" src="" alt="Imagem do Livro" />
+        <img id="bookImage" src="" />
         <div class="book-info">
-          <h2 id="bookTitle">Título do Livro</h2>
-          <p id="bookSynopsis">Sinopse aparecerá aqui...</p>
+          <h2 id="bookTitle">Sua próxima leitura...</h2>
+          <p id="bookSynopsis"></p>
         </div>
       </div>
 
