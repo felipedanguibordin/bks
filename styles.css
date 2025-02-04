@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
   background-color: #121212;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: "Moderustic", Arial, sans-serif;
   margin: 0;
   padding: 20px;
 }
@@ -107,18 +109,33 @@ button:hover {
 .book-details {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  min-height: 150px; /* Define uma altura mínima para manter a centralização */
 }
 
 #bookImage {
-  width: 120px;
+  width: 50%;
   height: auto;
   border-radius: 5px;
+  display: none;
+}
+
+#bookTitle {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.hidden {
+  display: none;
 }
 
 .book-info {
-  text-align: left;
+  text-align: center;
+  width: 50%;
 }
 
 #savedBooks {
@@ -130,8 +147,8 @@ button:hover {
 #suggestions {
   position: absolute;
   top: 60px;
-  width: 90%;
-  background: #222;
+  width: 97%;
+  background: #333;
   list-style: none;
   padding: 0;
   border-radius: 5px;

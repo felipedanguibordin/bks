@@ -77,3 +77,20 @@ function saveBook() {
   document.getElementById("comments").value = "";
   document.getElementById("characters").value = "";
 }
+
+function displayBook(title, synopsis, imageUrl) {
+  const bookTitle = document.getElementById("bookTitle");
+  const bookSynopsis = document.getElementById("bookSynopsis");
+  const bookImage = document.getElementById("bookImage");
+
+  if (imageUrl) {
+    bookImage.src = imageUrl;
+    bookImage.style.display = "block";
+    bookTitle.classList.add("hidden");
+  }
+
+  if (synopsis) {
+    bookSynopsis.textContent = synopsis;
+    bookSynopsis.classList.remove("hidden");
+  }
+}
