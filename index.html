@@ -1,57 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Organizador de Leituras</title>
-
+    <title>Organização de Leituras</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="imgs/livro.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     />
-
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="imgs/livro.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="search-section">
-        <div class="search-box">
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Digite o nome do livro..."
-            oninput="getSuggestions()"
-            autocomplete="off"
-          />
-          <span class="search-icon"><i class="fas fa-search"></i></span>
+      <div class="header">
+        <div class="search-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="search"
+              placeholder="Pesquisar livro..."
+              oninput="getSuggestions()"
+              autocomplete="off"
+            />
+            <span id="search-btn" class="search-icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+          <ul id="suggestions"></ul>
         </div>
-        <ul id="suggestions"></ul>
+        <nav class="submenus-container">
+          <ul class="submenus">
+            <li>Dashboard</li>
+            <li>Continuar Lendo</li>
+            <li>Esquecidos na Estante</li>
+            <li>Sugestões de Livros</li>
+          </ul>
+        </nav>
       </div>
-
-      <div class="book-details">
-        <img id="bookImage" src="" />
-        <div class="book-info">
-          <h2 id="bookTitle">Sua próxima leitura...</h2>
-          <p id="bookSynopsis" hidden></p>
+      <section id="proxima-leitura">
+        <h2>Sua Próxima Leitura...</h2>
+      </section>
+      <main id="livro-info" class="hidden">
+        <div class="livro-container">
+          <img id="livro-img" src="" alt="Imagem do Livro" />
+          <div class="sinopse-container">
+            <div class="sinopse"></div>
+          </div>
         </div>
-      </div>
-
-      <textarea
-        id="comments"
-        placeholder="Adicione comentários e anotações..."
-      ></textarea>
-      <textarea
-        id="characters"
-        placeholder="Descrição dos personagens..."
-      ></textarea>
-
-      <button onclick="saveBook()">Salvar Livro</button>
-
-      <h2>📚 Livros Salvos</h2>
-      <div id="savedBooks"></div>
+        <div class="detalhes">
+          <div class="caixa-anotacoes">
+            <textarea id="anotacoes" placeholder="Anotações..."></textarea>
+            <textarea
+              id="personagens"
+              placeholder="Descrição dos personagens..."
+            ></textarea>
+            <button id="salvar-livro" class="btn-green">Salvar Livro</button>
+            <button id="esquecer-livro" class="btn-red">
+              Esquecer na Estante
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
